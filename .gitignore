@@ -1,6 +1,7 @@
-=# Executable files
-*.out
+# Executable files
 *.exe
+*.out
+a.out
 
 # Object files
 *.o
@@ -14,10 +15,13 @@
 # Debug files
 *.dSYM/
 
-# Log and temporary files
+# Log files
 *.log
 *.tmp
 *~
 
-# VS Code settings (optional)
+# VS Code settings
 .vscode/
+
+# Output folders
+output/
