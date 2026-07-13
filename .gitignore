@@ -1,0 +1,23 @@
+=# Executable files
+*.out
+*.exe
+
+# Object files
+*.o
+*.obj
+
+# Libraries
+*.a
+*.so
+*.dll
+
+# Debug files
+*.dSYM/
+
+# Log and temporary files
+*.log
+*.tmp
+*~
+
+# VS Code settings (optional)
+.vscode/
