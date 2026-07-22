@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 int main(){
     int b;
     printf("Enter the star limit:");

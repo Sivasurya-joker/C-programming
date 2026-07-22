@@ -1,8 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int suspect = 100;
-    int evidence = 50;
+    int suspect ;
+    int evidence ;
+
+    printf("Enter the number of suspects: ");
+    scanf("%d", &suspect);
+
+    printf("Enter the number of evidence items: ");
+    scanf("%d", &evidence);
 
     if (suspect == 0 && evidence == 0) {
         printf("No entry of New Cases");
