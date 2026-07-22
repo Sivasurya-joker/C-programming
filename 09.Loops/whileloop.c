@@ -11,7 +11,7 @@ void print_loop(){
         printf("request for amount withdraw!!\n");
         printf ("enter the amount you want :");
         scanf("%d",&amount);
-        if (amount <=10000){
+        if (amount <=50000){
             balance=amount;
             notes500=balance/500;
             balance %=500;
