@@ -1,4 +1,8 @@
-# Executable files
+# ===========================
+# C/C++ Build Files
+# ===========================
+
+# Executables
 *.exe
 *.out
 a.out
@@ -12,16 +16,17 @@ a.out
 *.so
 *.dll
 
-# Debug files
-*.dSYM/
+# Ignore build folders
+output/
+build/
+bin/
+Debug/
+Release/
 
-# Log files
+# VS Code
+.vscode/
+
+# Temporary files
 *.log
 *.tmp
 *~
-
-# VS Code settings
-.vscode/
-
-# Output folders
-output/
