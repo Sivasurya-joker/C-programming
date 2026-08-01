@@ -4,7 +4,7 @@
 int main() {
     char name[100];
     
-    printf("enter no of names to be entered:\n");
+    
     printf("Enter your name: ");
     scanf("%s", name);   
 

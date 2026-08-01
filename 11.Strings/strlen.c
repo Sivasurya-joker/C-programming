@@ -1,7 +1,8 @@
 #include<stdio.h>
+#include<string.h>
 
 int main(){
     char str[]="sivasurya";
-    printf("%d",strlen(str));
+    printf("%zu",strlen(str));
     return 0;
 }
