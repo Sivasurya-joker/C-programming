@@ -1,6 +1,6 @@
 /*program to find the velocityof the product.*/
 #include<stdio.h>
-#include<conio.h>
+
 
   void main()
     {

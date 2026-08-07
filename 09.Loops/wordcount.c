@@ -1,31 +1,47 @@
-#include<stdio.h>
-void count(char*word)
+#include <stdio.h>
+
+char word[100];
+int vowel = 0;
+int consonants = 0;
+
+void get_the_input()
 {
-    int vowel=0;
-    int consonants=0;
-     int i;
-     int ch;
-     for(i=0;word[i]!='\0';i++)
-     {
-
-            ch=word[i];
-        if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
-        vowel++;
-
-        else
-        consonants++;    
-     }
-     printf("No of vowels in word: %d\n",vowel);
-     printf("No of consonants in word: %d\n",consonants);
+    printf("Word: ");
+    scanf("%99s", word);
 }
-int main (){
-    char word[100];
-    printf("word:");
-    scanf("%99s",word);
 
-    count(word);
-    
+void count_the_word()
+{
+    int i;
+
+    vowel = 0;
+    consonants = 0;
+
+    for(i = 0; word[i] != '\0'; i++)
+    {
+        char ch = word[i];
+
+        if(ch >= 'A' && ch <= 'Z')
+            ch = ch + 32;   
+
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+            vowel++;
+        else if(ch>='a' && ch<='z')
+            consonants++;
+    }
+}
+
+void print_the_count()
+{
+    printf("No of vowels      : %d\n", vowel);
+    printf("No of consonants  : %d\n", consonants);
+}
+
+int main()
+{
+    get_the_input();
+    count_the_word();
+    print_the_count();
+
     return 0;
-
-
 }

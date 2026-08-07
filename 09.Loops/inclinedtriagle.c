@@ -1,5 +1,6 @@
 #include<stdio.h>
-int main (){
+void inclinedtriangle(){
+
     int pass;
     printf("ebter the value of pass = ");
     scanf("%d",&pass);
@@ -11,5 +12,9 @@ int main (){
         }
         printf("\n");
     }
+}
+int main (){
+
+    inclinedtriangle();
     return 0;
  }

@@ -1,5 +1,6 @@
 #include<stdio.h>
-int main (){
+void square(){
+
     int  star=5;
     for (int i=1;i<=star;i++){
         for(int j=1;j<=star;j++){
@@ -7,6 +8,12 @@ int main (){
         }
         printf("\n");
     }
+
+}
+
+
+int main (){
+  square();
   return 0;
 
 }

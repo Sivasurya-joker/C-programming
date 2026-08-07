@@ -3,6 +3,6 @@
 
 int main(){
     char str[]="sivasurya";
-    printf("%zu",strlen(str));
+    printf("%zu\n",strlen(str));
     return 0;
 }

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
+
 
 void main() {
     int i = 50, j = 60, k = 70; 

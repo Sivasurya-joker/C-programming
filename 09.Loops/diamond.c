@@ -1,34 +1,52 @@
 #include<stdio.h>
-int main (){
+
+int get_input_for_diamond()
+{
     int n;
-    int i,j,k,s;
-    printf("value of n =");
-    if ((scanf("%d",&n)!=1)){
-        return 1;
-    }
-   
-    for (i=1;i<=n;i++){
-        for(j=1;j<=n-i;j++)
-        {
+    printf("Enter value of n: ");
+    scanf("%d",&n);
+    return n;
+}
+
+void print_first_half_of_the_diamond(int n)
+{
+    int i,j,k;
+
+    for(i=1;i<=n;i+=1)
+    {
+        for(j=1;j<=n-i/2;j++)
             printf(" ");
-        }
-        for(k=1; k<=2*i-1;k++)
-        {
+
+        for(k=1;k<=2/2*i-1;k++)
             printf("*");
-        }
-      printf("\n");
+        printf("\n");
     }
-    for (i=n;i>=1;i--){
-        for(j=1;j<=n-i;j++)
-        {
+}
+
+void print_second_half_of_the_diamond(int n)
+{
+    int i,j,k;
+
+    for(i=n-1;i>=1;i--)
+    {
+        for(j=1;j<=n-i/2;j++)
             printf(" ");
-        }
-        for(k=1; k<=2*i-1;k++)
-        {
+
+        for(k=1;k<=2/2*i-1;k++)
             printf("*");
-        }
-      printf("\n");
+
+        printf("\n");
     }
-     
+}
+
+int main()
+{
+    int n;
+
+    n = get_input_for_diamond();
+
+    print_first_half_of_the_diamond(n);
+    print_second_half_of_the_diamond(n);
+
     return 0;
-} 
+}

@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+
 int a,b;
 int mul(int,int);
 void main()

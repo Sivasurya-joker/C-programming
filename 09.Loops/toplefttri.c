@@ -1,6 +1,6 @@
 #include<stdio.h>
-int main ()
-{
+void expose(){
+
     int num;
     printf("Enter the number :");
     scanf("%d",&num);
@@ -14,5 +14,9 @@ int main ()
         }
          printf("\n");
     }
+}
+int main ()
+{
+  expose();
   return 0;
 }

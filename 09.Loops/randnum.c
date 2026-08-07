@@ -1,7 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
-int main(){
+void random(){
+
     int value = rand();
     printf("%d\n",value);
+}
+int main(){
+    random();
+    
     return 0;
 }

@@ -1,5 +1,18 @@
 #include<stdio.h>
 #include<string.h>
+void expose (){
+    int n;
+    printf(" Enter the n value :");
+    scanf("%d",&n);
+    
+    if (palindrome(n)){
+        printf("yes\n");
+    }
+    else{
+        printf("No\n");
+    }
+
+}
 int palindrome(int n){
     char str[20];
 
@@ -18,14 +31,6 @@ int palindrome(int n){
  return 1;
 }
 int main (){
-    int n;
-    printf(" Enter the n value :");
-    scanf("%d",&n);
-
-    if (palindrome(n)){
-        printf("yes\n");
-    }
-    else{
-        printf("No\n");
-    }
+    expose ();
+    return 0;
 }

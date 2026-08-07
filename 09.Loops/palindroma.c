@@ -1,34 +1,63 @@
-#include<stdio.h>
+#include <stdio.h>
+
+int get_user_input()
+{
+    int n;
+
+    printf("Enter the num: ");
+    scanf("%d", &n);
+
+    return n;//update 
+}
+
 int reverse(int n)
 {
-    int rev =0;
-    while (n>0)
+    int rev = 0;
+
+    while (n > 0)
     {
-        int digit = n%10;//remove last num
-        rev=rev*10+digit;//reverse the digit
-        n/=10;//remove last digit 
-    }
-    return 0;
-}
-int palindrome(int n)
-{
-    if (n<0){
-        return 0;
-        return n = reverse(n) ;
+        int digit = n % 10;      // Remove last digit
+        rev = rev * 10 + digit;  // Build reverse
+        n /= 10;                 // Remove last digit
     }
 
+    return rev;
 }
-int main ()
+
+int palindrome(int n)
 {
-    int n ;
-    printf("Enter the num:");
-    scanf("%d",&n);
-    if (palindrome(n)){
-        printf("yes it is a Palindrome\n");
+    int original = n;
+    int rev = reverse(n);
+
+    if (original == rev)
+    {
+        return 1;
     }
     else
     {
-        printf("No its not a Palindrome\n");
+        return 0;
     }
+}
+
+void print_palindrome(int n)//update 
+{
+    if (palindrome(n))
+    {
+        printf("Yes, it is a Palindrome.\n");
+    }
+    else
+    {
+        printf("No, it is not a Palindrome.\n");
+    }
+}
+
+int main()
+{
+    int n;
+
+    n = get_user_input();
+
+    print_palindrome(n);
+
     return 0;
 }

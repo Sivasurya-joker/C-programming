@@ -1,42 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-
-int main ()
+void get_number(int *n)
 {
-  srand((time (NULL)));
-  int value = rand ()%100+1;
-  int n;
-  int loop =5;
-  int i = 0;
-            
-  for (int i=0; i<loop;i++)
-  {
+    printf("Choose the number from [1-100]: ");
+    scanf("%d", n);
+}
 
-      printf("Choose the number form [1-100]=");
-      scanf("%d",&n);
-   
-    if(n==value)
+int guessingtime(int value, int n)
+{
+    if (n == value)
     {
-     printf("Your guess is Rigth !!! \n");
-     printf("Youse win the game !!! \n");
-     break;
+        printf("Your guess is Right!!!\n");
+        printf("You win the game!!!\n");
+        return 1;
     }
-    else if (n<value)
+    else if (n < value)
     {
-      printf("Your guess is lower, Try Again! \n");
+        printf("Your guess is lower, Try Again!\n");
     }
-    else 
+    else
     {
-      printf("Your guess is higher,Take another chance Again\n");
+        printf("Your guess is higher, Take another chance Again.\n");
     }
-    if (i==loop-1)
+
+    return 0;
+}
+
+void endgame(int value)
+{
+    printf("\nYou lose the game.\n");
+    printf("Thank you for playing the game.\n");
+    printf("The number was: %d\n", value);
+}
+
+int main()
+{
+    srand(time(NULL));
+
+    int value = rand() % 100 + 1;
+    int n;
+    int loop ;
+    printf("change = %d",loop);
+    scanf("%d",&loop);
+
+    for (int i = 0; i < loop; i++)
     {
-      printf("You lose the game\n  Thankyou for palying the Game \n");
-      printf("THe number is :%d\n",value);
-      break;
+        printf("\nChance %d of %d\n", i + 1, loop);
+
+        get_number(&n);
+
+        if (guessingtime(value, n))
+        {
+            return 0;
+        }
     }
-  }
-   return 0;
+
+    endgame(value);
+
+    return 0;
 }

@@ -1,56 +1,61 @@
-#include<stdio.h>
-void show(char*word)
+#include <stdio.h>
+
+void get_the_word(char *word)
 {
-      
-        char ch;
- for(int i=0;word[i]!='\0';i++)
-    {
-        ch=word[i];
-        if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
-        {
-            printf("vowels are   : %c\n ",ch);
-        }
-        else if (ch>= 'a' && ch<= 'z')
-        {
-          printf("consonants are : %c \n",ch);  
-        } 
-      
-    }
+    printf("Word : ");
+    scanf("%99s", word);
 }
 
-
-void count(char*word)
+void count_the_characters(char *word)
 {
-    int vowels=0;
-    int consonants=0;
-    
-    char ch;//single decalration 
-    
- 
-    for(int i=0;word[i]!='\0';i++)
+    int vowels = 0;
+    int consonants = 0;
+    char ch;
+
+    for (int i = 0; word[i] != '\0'; i++)
     {
-        ch=word[i];
-        if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+        ch = word[i];
+
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
         {
             vowels++;
         }
-        else
+        else if (ch >= 'a' && ch <= 'z')
         {
-        consonants++;  
+            consonants++;
         }
     }
-    printf("No of vowels in word: %d\n",vowels);
-    printf("No of consonants in word: %d\n",consonants);  
-  
-}   
-    
-int main ()
+
+    printf("Vowels      : %d\n", vowels);
+    printf("Consonants  : %d\n", consonants);
+}
+
+void print_the_vowels_and_consonents(char *word)
+{
+    char ch;
+
+    for (int i = 0; word[i] != '\0'; i++)
+    {
+        ch = word[i];
+
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+        {
+            printf("Vowel      : %c\n", ch);
+        }
+        else if (ch >= 'a' && ch <= 'z')
+        {
+            printf("Consonant  : %c\n", ch);
+        }
+    }
+}
+
+int main()
 {
     char word[100];
-    printf("word:");
-    scanf("%99s",word);
-    count(word);
-    show(word);
+
+    get_the_word(word);
+    count_the_characters(word);
+    print_the_vowels_and_consonents(word);
 
     return 0;
 }

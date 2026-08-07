@@ -1,6 +1,6 @@
 /*getch and putch  function */
 #include <stdio.h>
-#include <conio.h>
+
 
 /// @brief 
 void main() 
