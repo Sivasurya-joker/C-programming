@@ -1,6 +1,14 @@
 #include<stdio.h>
-void printtriangle(){
-    int num = 4;
+void get_input()
+{
+int num ;
+printf("Give the number :");
+scanf("%d",&num);
+}
+
+void print_triangle()
+{
+  int num;
      for (int i = 0;i<=num; i++){
         for (int j = 0; j<=i;j++){
             printf("*");
@@ -11,6 +19,7 @@ void printtriangle(){
 }
 
 int main (){
-  printtriangle();
+  get_input();
+  print_triangle();
   return 0;
 }
