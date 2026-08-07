@@ -48,7 +48,7 @@
     }
     
     void  thankyou_message(){
-        printf(" Thankyou for using our ATM!");
+        printf(" Thankyou for using our ATM!\n");
     }
     int main(){
     
