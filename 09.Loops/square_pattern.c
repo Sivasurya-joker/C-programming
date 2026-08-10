@@ -1,7 +1,13 @@
 #include<stdio.h>
-void square(){
+int give_the_number(){
+    int star;
+    printf("enter the no of stas to be printed : \n");
+    scanf("%d",&star);
+}
 
-    int  star=5;
+void square(int star){
+
+    
     for (int i=1;i<=star;i++){
         for(int j=1;j<=star;j++){
             printf("*");
@@ -13,7 +19,8 @@ void square(){
 
 
 int main (){
-  square();
+  int star= give_the_number();
+  square(star);
   return 0;
 
 }
