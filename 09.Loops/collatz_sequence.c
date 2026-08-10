@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int getcollazt()
+int getcollazt_number()
 {
     int n;
     printf("Enter the number: ");
@@ -8,7 +8,7 @@ int getcollazt()
     return n;
 }
 
-void check(int n)
+void check_the_collazt_value(int n)
 {
     int round = 1;
 
@@ -31,16 +31,18 @@ void check(int n)
 
         round++;
     }
-
+}
+void print_the_result(int n){
     printf("\nCollatz Conjecture completed.\n");
     printf("Final number = %d\n", n);
 }
-
 int main()
 {
-    int n = getcollazt();
+    int n = getcollazt_number();
 
-    check(n);
+    check_the_collazt_value(n);
+    print_the_result(n);
+
 
     return 0;
 }
