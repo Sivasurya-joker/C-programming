@@ -4,7 +4,7 @@ char word[100];
 int vowel = 0;
 int consonants = 0;
 
-void get_the_input()
+void get_the_word()
 {
     printf("Word: ");
     scanf("%99s", word);
@@ -39,7 +39,7 @@ void print_the_count()
 
 int main()
 {
-    get_the_input();
+    get_the_word();
     count_the_word();
     print_the_count();
 
