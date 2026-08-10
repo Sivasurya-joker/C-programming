@@ -1,20 +1,22 @@
 #include<stdio.h>
-void printpyramid()
-{
-    int n,i,j,k;
- printf("value of n =");
+int get_the_input(){
+int n;
+printf("value of n =");
 if ((scanf("%d",&n)!=1))
 {
-    return ;
+    return 0;
 }
-
-for (i=1;i<=n;i++)
+return n;
+}
+void print_pyramid(int n)
 {
-    for(j=1;j<=n-i;j++)
+for (int i=1;i<=n;i++)
+{
+    for(int j=1;j<=n-i;j++)
     {
         printf(" ");
     }
-    for(k=1; k<=2*i-1;k++)
+    for(int k=1; k<=2*i-1;k++)
     {
         printf("*");
     }
@@ -22,6 +24,8 @@ for (i=1;i<=n;i++)
 }
 }
 int main (){
-    printpyramid();
+    int n;
+   n= get_the_input();
+    print_pyramid(n);
     return 0;
 }
