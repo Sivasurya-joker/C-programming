@@ -13,8 +13,9 @@ void get_the_char(char message[]){
 int get_the_static_value()
 {
      int static_value;
-     printf("Enter the static value :");
+     printf("Enter the static value : ");
      scanf("%d",&static_value);
+     return static_value;
 }
 void  print_the_data( int number , char message[] ,int static_value){
    
