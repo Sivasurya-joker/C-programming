@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -35,15 +36,13 @@ void endgame(int value)
     printf("The number was: %d\n", value);
 }
 
-int main()
+int gamechance(int value)
 {
-    srand(time(NULL));
-
-    int value = rand() % 100 + 1;
     int n;
-    int loop ;
-    printf("change = %d",loop);
-    scanf("%d",&loop);
+    int loop;
+
+    printf("Amount of chances: ");
+    scanf("%d", &loop);
 
     for (int i = 0; i < loop; i++)
     {
@@ -53,11 +52,23 @@ int main()
 
         if (guessingtime(value, n))
         {
-            return 0;
+            return 1;
         }
     }
 
-    endgame(value);
+    return 0;
+}
+
+int main()
+{
+    srand(time(NULL));
+
+    int value = rand() % 100 + 1;
+
+    if (!gamechance(value))
+    {
+        endgame(value);
+    }
 
     return 0;
 }

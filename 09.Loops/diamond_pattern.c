@@ -6,12 +6,7 @@ int get_input_for_diamond()
     printf("Enter value of n: ");
     scanf("%d",&n);
 
-    if (n%2==0){
-        printf("Your given input is Even Number\n");
-    }
-    else {
-        printf("Your given input is Odd Number\n");
-    }
+  
     return n;
 }
 
@@ -26,8 +21,8 @@ void print_the_diamond(int n)
 
         for(k=1;k<=2*i-1;k++)
             printf("*");
-
-        printf("\n");
+            printf("\n");
+            
     }
 
     for(i=n-1;i>=1;i--)
@@ -37,8 +32,8 @@ void print_the_diamond(int n)
 
         for(k=1;k<=2*i-1;k++)
             printf("*");
+            printf("\n");
 
-        printf("\n");
     }
 }
 
