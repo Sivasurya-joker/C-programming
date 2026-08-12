@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int  get_the_player_count()
+{
+int player;
+printf("enter the no of players:");
+scanf("%d",&player);
+if (players<=2)
+	{
+	printf("This  game  was played by 2 members only ,so kindly verify your  player count\n");
+	retrun  player;
+	}
+}
+
+void 
+
