@@ -18,9 +18,10 @@ int store_the_word(char word[])
 
 void check_the_word(char word[], int n)
 {
-    for (int i = n - 1; i > 0; i--)
+    for (int i = n - 1; i > 0; i--)//index value accessed and then reduced.
+
     {
-        int j = rand() % (i + 1);
+        int j = rand() % (i + 1);//check with the created rand num with index value.
 
         char temp = word[i];
         word[i] = word[j];
@@ -30,7 +31,7 @@ void check_the_word(char word[], int n)
 
 int main()
 {
-    srand(time(NULL));
+    srand(time(NULL));//fuction for rand num created.
 
     char word[2000];
     int n;
