@@ -1,24 +1,43 @@
 #include <stdio.h>
-void main()
+
+int get_the_value_form_the_user(){
+
+    int a,b,c,d;
+
+    printf("Ether the value to calculate for a:\n b:\n c\n: d:\n");
+
+    scanf("%d %d %d %d",&a,&b,&c,&d);
+
+    return a,b,c,d;
+}
+
+
+void print_the_result(int a,int b,int c,int d,
+int result) {
+
+    printf("a=%d,b=%d,c=%d,d=%d\n",a,b,c,d);
+
+    result=a+b;
+    printf("a+b=%d\n",result);
+
+    result=a-b;
+    printf("a-b=%d\n",result);
+
+    result=a*c;
+    printf("a*c=%d\n",result);
+
+    result=a/d;
+    printf("a/d=%d\n",result);
+}
+
+int main ()
 {
-    int a=100,b=20,c=30,d=40;
+    int a,b,c,d;
     int result;
 
-    printf("a=%d,b%d,c=%d,d=%d\n",a,b,c,d);
-    result=a+b;
+    d = get_the_value_form_the_user();
 
-    printf("a+b=%d\n",result);
-    result=a-b;
+    print_the_result(a,b,c,d,result);
 
-    printf("a-b=%d\n",result);
-    result=a-b;
-
-    printf("a*c=%d\n",result);
-    result=a*c;
-
-
-    printf("a/d=%d\n",result);
-    result=a/d;
-
-    getch();
+    return 0;
 }
