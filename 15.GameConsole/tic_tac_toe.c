@@ -5,13 +5,23 @@ void show_game()
     printf("\n--- TIC TAC TOE ---\n");
 }
 
-void create_board(char board[3][3])
+int get_board_size()
 {
-    char count = '1';
+    int n;
 
-    for(int i = 0; i < 3; i++)
+    printf("Enter the size of the board : ");
+    scanf("%d", &n);
+
+    return n;
+}
+
+void create_board(int n, int board[n][n])
+{
+    int count = 1;
+
+    for(int i = 0; i < n; i++)
     {
-        for(int j = 0; j < 3; j++)
+        for(int j = 0; j < n; j++)
         {
             board[i][j] = count;
             count++;
@@ -19,32 +29,45 @@ void create_board(char board[3][3])
     }
 }
 
-void display_board(char board[3][3])
+void display_board(int n, int board[n][n])
 {
     printf("\n");
 
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < n; i++)
     {
-        printf(" %c   %c   %c \n",
-               board[i][0],
-               board[i][1],
-               board[i][2]);
+        for(int j = 0; j < n; j++)
+        {
+            if(board[i][j] == -1)
+            {
+                printf(" X ");
+            }
+            else if(board[i][j] == -2)
+            {
+                printf(" O ");
+            }
+            else
+            {
+                printf("%02d ", board[i][j]);
+            }
+        }
+
+        printf("\n");
     }
 
     printf("\n");
 }
 
-int check_move(char board[3][3], int plot)
+int check_move(int n, int board[n][n], int plot)
 {
-    int x = (plot- 1) / 3;
-    int y = (plot- 1) % 3;
-
-    if(plot < 1 || plot > 9)
+    if(plot < 1 || plot > n * n)
     {
         return 0;
     }
 
-    if(board[x][y] == 'X' || board[x][y] == 'O')
+    int x = (plot - 1) / n;
+    int y = (plot - 1) % n;
+
+    if(board[x][y] == -1 || board[x][y] == -2)
     {
         return 0;
     }
@@ -52,87 +75,131 @@ int check_move(char board[3][3], int plot)
     return 1;
 }
 
-void make_move(char board[3][3], int plot, char player)
+void make_move(int n, int board[n][n], int plot, char player)
 {
-    int x= (plot - 1) / 3;
-    int y = (plot- 1) % 3;
+    int x = (plot - 1) / n;
+    int y = (plot - 1) % n;
 
-    board[x][y] = player;
+    if(player == 'X')
+        board[x][y] = -1;
+    else
+        board[x][y] = -2;
 }
 
-int check_winner(char board[3][3], char player)
+int check_winner(int n, int board[n][n], char player)
 {
+    int value;
+
+    if(player == 'X')
+        value = -1;
+    else
+        value = -2;
+
     // Rows
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < n; i++)
     {
-        if(board[i][0] == player &&
-           board[i][1] == player &&
-           board[i][2] == player)
+        int win = 1;
+
+        for(int j = 0; j < n; j++)
         {
-            return 1;
+            if(board[i][j] != value)
+            {
+                win = 0;
+                break;
+            }
         }
+
+        if(win)
+            return 1;
     }
 
     // Columns
-    for(int j = 0; j < 3; j++)
+    for(int j = 0; j < n; j++)
     {
-        if(board[0][j] == player &&
-           board[1][j] == player &&
-           board[2][j] == player)
+        int win = 1;
+
+        for(int i = 0; i < n; i++)
         {
-            return 1;
+            if(board[i][j] != value)
+            {
+                win = 0;
+                break;
+            }
         }
+
+        if(win)
+            return 1;
     }
 
     // Main diagonal
-    if(board[0][0] == player &&
-       board[1][1] == player &&
-       board[2][2] == player)
+    int win = 1;
+
+    for(int i = 0; i < n; i++)
     {
-        return 1;
+        if(board[i][i] != value)
+        {
+            win = 0;
+            break;
+        }
     }
 
-    // Other diagonal
-    if(board[0][2] == player &&
-       board[1][1] == player &&
-       board[2][0] == player)
-    {
+    if(win)
         return 1;
+
+    // Other diagonal
+    win = 1;
+
+    for(int i = 0; i < n; i++)
+    {
+        if(board[i][n - 1 - i] != value)
+        {
+            win = 0;
+            break;
+        }
     }
+
+    if(win)
+        return 1;
 
     return 0;
 }
 
 int main()
 {
-    char board[3][3];
     char player = 'X';
     int plot;
+    int n;
 
     show_game();
 
-    create_board(board);
+    n = get_board_size();
 
-    for(int turn = 0; turn < 9; )
+    int board[n][n];
+
+    create_board(n, board);
+
+    int total_turns = n * n;
+
+    for(int turn = 0; turn < total_turns; )
     {
-        display_board(board);
+        display_board(n, board);
 
         printf("Player %c, enter position: ", player);
         scanf("%d", &plot);
 
-        if(!check_move(board, plot))
+        if(!check_move(n, board, plot))
         {
             printf("Invalid position! Try again.\n");
             continue;
         }
 
-        make_move(board, plot, player);
+        make_move(n, board, plot, player);
 
         turn++;
 
-        if(check_winner(board, player))
+        if(check_winner(n, board, player))
         {
-            display_board(board);
+            display_board(n, board);
             printf("Player %c Wins!\n", player);
             return 0;
         }
@@ -143,7 +210,7 @@ int main()
             player = 'X';
     }
 
-    display_board(board);
+    display_board(n, board);
     printf("Game Draw!\n");
 
     return 0;
