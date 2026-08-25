@@ -18,7 +18,7 @@ int get_the_number_of_words()
     return n;
 }
 
-void create_the_list(int n,char list[n][20])
+void create_the_list(int n,char list[n][200])
 {
     for(int i=0;i<n;i++)
     {
@@ -27,7 +27,7 @@ void create_the_list(int n,char list[n][20])
     }
 }
 
-char* generate_the_randomword_from_list(int n,char list[n][20])
+char* generate_the_randomword_from_list(int n,char list[n][200])
 {
     int index;
 
@@ -68,8 +68,8 @@ int main()
 
     n=get_the_number_of_words();
 
-    char list[n][20];
-    char word[20];
+    char list[n][200];
+    char word[200];
     char hidden[20];
 
     create_the_list(n,list);
