@@ -28,6 +28,32 @@ void create_board(int n, int board[n][n])
         }
     }
 }
+char ask_for_first_play()
+{
+    char player;
+
+    printf("Who are you in this game [X/O]: ");
+
+    scanf(" %c",&player);
+
+    if(player=='x' || player=='X')
+    {
+        player='X';
+        printf("You are the first player!!!\n");
+    }
+    else if (player=='O'||player=='o')
+    {
+        player = 'O';
+        printf("You are the second player!!!\n");
+    }
+    else
+    {
+        printf("Invalid Input...!,Enter a Valid Input number");
+        return '\0';
+    }
+    
+    return player;
+}
 
 void display_board(int n, int board[n][n])
 {
@@ -176,15 +202,17 @@ int main()
 
     int board[n][n];
 
+    ask_for_first_play();
     create_board(n, board);
-
+    
     int total_turns = n * n;
-
+    
     for(int turn = 0; turn < total_turns; )
     {
+        
         display_board(n, board);
-
-        printf("Player %c, enter position: ", player);
+        
+        printf("Player %c, enter position: ", player);  
         scanf("%d", &plot);
 
         if(!check_move(n, board, plot))
@@ -194,7 +222,7 @@ int main()
         }
 
         make_move(n, board, plot, player);
-
+        
         turn++;
 
         if(check_winner(n, board, player))
@@ -208,10 +236,10 @@ int main()
             player = 'O';
         else
             player = 'X';
-    }
+        }
 
-    display_board(n, board);
+        display_board(n, board);
     printf("Game Draw!\n");
-
+    
     return 0;
 }
