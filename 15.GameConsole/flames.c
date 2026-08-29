@@ -50,9 +50,9 @@ void flames(int count)
 
     while (strlen(flames) > 1)
     {
-        index = (index + count - 1) % strlen(flames);
+        index = (index + count - 1) % strlen(flames);//index value  is add with the count of letters and it divide with the str len of flames.
 
-        for (int i = index; flames[i] != '\0'; i++)
+        for (int i = index; flames[i] != '\0'; i++)//check for the value in word in index and flames.
         {
             flames[i] = flames[i + 1];
         }
