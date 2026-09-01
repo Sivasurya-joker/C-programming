@@ -13,6 +13,8 @@ arithmatic_operations++;
 
 printf("arithematic_operations++= %u\n",arithmatic_operations);
 arithmatic_operations--;
+
+
 }
 int main (){
     int n ;
