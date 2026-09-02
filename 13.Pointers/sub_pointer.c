@@ -21,7 +21,7 @@ int main () {
     printf("\nDiscount of sp""&cp is %d\n",discount);
 
     
-     printf("Your Business will face a loss area.\n");
+     printf("Your will face a loss .\n");
     
 
     return 0;
