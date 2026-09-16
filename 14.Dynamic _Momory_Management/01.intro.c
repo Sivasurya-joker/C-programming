@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 int main()
 {
     int *locate = malloc(5 * sizeof(int));
@@ -11,7 +10,7 @@ int main()
     }
     for (int i = 0; i < 5; i++)
         locate[i] = i + 1;
-    for (int i = 0; i < 5; i++)clea
+    for (int i = 0; i < 5; i++)
         printf("%d ", locate[i]);
     free(locate);
     return 0;
