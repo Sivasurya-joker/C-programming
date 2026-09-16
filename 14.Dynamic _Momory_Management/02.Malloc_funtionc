@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main ()
+{
+int *locate = malloc (5*sizeof(int));
+if (locate ==NULL)
+{
+    printf("Memory alocation failed  ...\n");
+    return 1;
+}
+printf("Memory alocation success...\n");
+free (locate);
+return 0;
+}
